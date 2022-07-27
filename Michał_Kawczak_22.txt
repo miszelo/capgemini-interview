@@ -1,0 +1,6 @@
+Name: Micha³ Kawczak,
+Age: 22,
+Job: Software Developer,
+Salary: 4000,
+Bonus: 300,
+Total salary: 4300
