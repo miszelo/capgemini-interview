@@ -20,6 +20,6 @@ class Employee:
                 f"Bonus: {self.bonus},\n" +
                 f"Total salary: {self.total_salary}\n")
 
-    def save_employee_to_txt(self):
-        with open(f"{self.first_name}_{self.last_name}_{self.age}.txt", "w") as file:
+    def save_employee_to_txt(self, filename: str):
+        with open(f"{filename}.txt", "w", encoding="UTF-8") as file:
             file.write(self.__str__())

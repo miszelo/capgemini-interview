@@ -6,8 +6,10 @@ def create_employee(first_name: str, last_name: str, age: int, job: str, salary:
     return Employee(first_name, last_name, age, job, salary)
 
 
-def create_department(name: str, users: []) -> Department:
-    return Department(name, users)
+def create_department(name: str, employees=None) -> Department:
+    if employees is None:
+        employees = []
+    return Department(name, employees)
 
 
 def apply_bonus_to_employee(employee: Employee, bonus: float):
@@ -50,7 +52,7 @@ if __name__ == '__main__':
     capgemini.remove_employee_from_department(anna)
     capgemini.display_employees()
 
-    michal.save_employee_to_txt()
+    michal.save_employee_to_txt("info_about_michal")
 
     jacob = create_employee("Jacob", "Ken", 25, "Software Developer", 3000)
     kris = create_employee("Kris", "Tin", 33, "Team Leader", 15000)
@@ -61,7 +63,13 @@ if __name__ == '__main__':
     xyz_company.display_employees()
 
     jacob.apply_bonus(600)
-
     xyz_company.display_employees()
 
     xyz_company.display_departments()
+
+    print(xyz_company["Kris"])
+    print(xyz_company["Tin"])
+    print(xyz_company["testing"])
+
+    print(capgemini["Michał"])
+    print(capgemini["testing"])
